@@ -1,0 +1,21 @@
+###############################################################################
+# bands.txt
+#
+# List of selectable amateur radio bands for use by the simplelog application.
+# List all selectable bands below, one band per line.
+# They will be displayed in the order listed.
+###############################################################################
+160m
+80m
+60m
+40m
+30m
+20m
+17m
+15m
+12m
+10m
+6m
+2m
+1.25cm
+70cm
