@@ -70,9 +70,12 @@ class WidgetTextEntry(object):
     WidgetTextEntry class for use with the simplelog application.
     Provides a labeled text entry box for GUI entry of log field values.
     """
+    
+    DEFAULT_WIDTH = 12
+    
     # ------------------------------------------------------------------------
     def __init__(self, parent, title, field, 
-        width=12, 
+        width=DEFAULT_WIDTH, 
         to_upper = False,
         validator=None,
         title_padx = 3,

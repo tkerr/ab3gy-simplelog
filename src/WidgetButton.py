@@ -72,7 +72,6 @@ class WidgetButton(object):
     # ------------------------------------------------------------------------
     def __init__(self, parent, text, command,
         width=12, 
-        readonly = True,
         title_padx = 3,
         title_pady = 3,
         title_size = 10,
@@ -106,8 +105,6 @@ class WidgetButton(object):
         self._text = text            # The button text to display
         self._command = command      # The button command to execute
         
-
-        self.readonly = readonly
         self.title_padx = title_padx           # Title x padding
         self.title_pady = title_pady           # Title y padding
         self.title_font_size = title_size      # Title font size
@@ -117,8 +114,6 @@ class WidgetButton(object):
         self.widget_width = width              # Combo box text width
         
         self.init()
-    
-    
 
     # ------------------------------------------------------------------------
     def set_focus(self):

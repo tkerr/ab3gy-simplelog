@@ -75,7 +75,7 @@ def app_close():
         message='Do you want to exit ' + globals.APP_NAME + '?'):
         globals.close()
         globals.root.destroy()
-        print('Exiting  ' + globals.APP_NAME)
+        print('Exiting  {} {}'.format(globals.APP_NAME, globals.APP_VERSION))
 
 # ------------------------------------------------------------------------
 def set_geometry(window, new_width=0, new_height=0, x_offset=0, y_offset=0):

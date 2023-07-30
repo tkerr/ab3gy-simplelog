@@ -5,9 +5,9 @@
 # List all selectable modes below, one mode per line.
 # They will be displayed in the order listed.
 ###############################################################################
+SSB
 CW
 RTTY
-SSB
 FM
 FT8
 PSK

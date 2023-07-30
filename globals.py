@@ -53,18 +53,15 @@ from ConfigFile import ConfigFile
 # Globals.
 ##############################################################################
 APP_NAME = 'simplelog'
-APP_VERSION = '0.1'
+APP_VERSION = '0.2'
 APP_COPYRIGHT = '2023'
 
-NUM_USER_FIELDS = 4  # Number of user-defined fields
+NUM_USER_FIELDS = 5  # Default number of user-defined fields if not in config file
 
 root = None          # The root window
 config = None        # The config file object
+log_file = None      # ADIF LogFile object
 qso_entry = None     # The QSO entry frame
-
-# ADIF log file.
-log_name = os.path.join('log', 'simplelog_log.adi')
-log_file = None
 
 
 ##############################################################################
@@ -79,9 +76,8 @@ def init():
     global config
 
     # Read the configuration file.
-    # TBD - Uncomment when config file is in service.
-    #config = ConfigFile()
-    #config.read()
+    config = ConfigFile()
+    config.read()
    
 # ------------------------------------------------------------------------
 def close():
@@ -89,7 +85,6 @@ def close():
     Gracefully persist all settings and shutdown all threads.
     """
     global config
-    # TBD - Uncomment when config file is in service.
-    #config.write()
+    config.write()
 
 # ------------------------------------------------------------------------

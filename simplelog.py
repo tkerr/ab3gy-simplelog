@@ -70,18 +70,28 @@ if __name__ == "__main__":
     app_height = 400
 
     # Print a startup message in the command prompt window.
-    print('Starting ' + globals.APP_NAME)
+    print('Starting {} {}'.format(globals.APP_NAME, globals.APP_VERSION))
     
     # Initialize the application configuration.
     globals.init()
     
     # Initialize the log file.
-    globals.log_file = LogFile(globals.log_name)
+    # Log file name is stored in the config file.
+    section = 'LOGFILE'
+    key = 'NAME'
+    log_filename = globals.config.get(section, key)
+    if (log_filename == ''):
+        # Create default log file.
+        log_filename = os.path.join('log', 'simplelog_log.adi')
+        globals.config.add_section(section)
+        globals.config.set(section, key, log_filename)
+        globals.config.write()
+    globals.log_file = LogFile(log_filename)
     
     # Create and initialize the root window.
     globals.root = tk.Tk()
     globals.root.minsize(app_width, app_height)
-    globals.root.title(globals.APP_NAME + ' - Simple Amateur Radio Logger')
+    globals.root.title('{} {} - Simple Amateur Radio Logger'.format(globals.APP_NAME, globals.APP_VERSION))
     globals.root.protocol("WM_DELETE_WINDOW", lambda: app_close())
 
     # Create the QSO entry GUI frame.

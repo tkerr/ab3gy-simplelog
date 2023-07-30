@@ -1,0 +1,26 @@
+[LOGFILE]
+name = log\simplelog_log.adi
+
+[USER_FIELDS]
+num_fields = 5
+title_01 = SIG_INFO
+field_01 = SIG_INFO
+width_01 = 
+upper_01 = 1
+title_02 = Tx Power
+field_02 = TX_PWR
+width_02 = 
+upper_02 = 1
+title_03 = 
+field_03 = 
+width_03 = 
+upper_03 = 
+title_04 = 
+field_04 = 
+width_04 = 
+upper_04 = 
+title_05 = 
+field_05 = 
+width_05 = 
+upper_05 = 
+
